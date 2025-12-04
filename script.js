@@ -54,5 +54,59 @@ window.onload = () => {
             const weatherCode = data.current_weather.weathercode;
 
             // Choose icon
-            let icon = "☀️";
-            if (weatherCode >= 45 && weatherCode <= 4
+            let icon = "☀️"; // clear
+            if (weatherCode >= 45 && weatherCode <= 48) icon = "🌫️"; // fog
+            if (weatherCode >= 51 && weatherCode <= 67) icon = "🌧️"; // drizzle/rain
+            if (weatherCode >= 71 && weatherCode <= 77) icon = "❄️"; // snow
+            if (weatherCode >= 80 && weatherCode <= 82) icon = "🌦️"; // showers
+            if (weatherCode >= 95) icon = "⛈️"; // thunderstorm
+
+            document.getElementById("weather").textContent =
+                `${icon} ${temp}°C • Unaizah`;
+        })
+        .catch(() => {
+            document.getElementById("weather").textContent = "Weather unavailable";
+        });
+
+};
+
+
+
+// ---------------------------------------------------------
+// FIREBASE IMPORTS
+// ---------------------------------------------------------
+import { db } from "./firebase.js";
+import { ref, push } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+
+// ---------------------------------------------------------
+// SEND REQUEST TO FIREBASE + WHATSAPP
+// ---------------------------------------------------------
+export function sendRequest(requestText) {
+
+    const timestamp = new Date().toLocaleString();
+
+    const data = {
+        branch: branch,
+        room: room,
+        request: requestText,
+        status: "pending",
+        time: timestamp
+    };
+
+    // Save to Firebase
+    push(ref(db, "requests"), data);
+
+    // WhatsApp
+    let msg =
+        `Cheerful Hotel Request:\n` +
+        `Branch: ${branch}\n` +
+        `Room: ${room}\n` +
+        `Request: ${requestText}\n` +
+        `Time: ${timestamp}`;
+
+    window.location.href =
+        "https://wa.me/966560647000?text=" + encodeURIComponent(msg);
+}
+
+window.sendRequest = sendRequest;
