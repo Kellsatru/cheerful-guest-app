@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Reception – Cheerful Hotel</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer type="module" src="firebase.js"></script>
+<script defer type="module" src="script.js"></script>
+
+</head>
+<body class="guest-page">
+
+<!-- Logo -->
+<img src="logo.png" class="logo" alt="Cheerful Hotel Logo">
+
+<!-- Title -->
+<div class="header-text">Contact Reception</div>
+<div class="sub-text" id="branch-room">Loading...</div>
+
+<!-- Description -->
+<p style="color:white; width:85%; margin:0 auto; font-size:16px;">
+Our team is available 24/7 to assist you.  
+Please choose one of the options below.
+</p>
+
+<!-- WhatsApp Button -->
+<div class="option" onclick="sendRequest('General Inquiry – Contact Reception')">
+WhatsApp Reception
+</div>
+
+<!-- Call Button -->
+<a href="tel:+966560647000" class="button" style="margin-top:20px;">
+Call Reception
+</a>
+
+</body>
+</html>

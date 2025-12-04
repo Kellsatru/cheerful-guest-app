@@ -1,0 +1,218 @@
+/* ---------------------------
+   GLOBAL STYLING
+----------------------------*/
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    margin: 30px auto 10px;
+}
+
+/* Buttons (Guest App) */
+.button {
+    width: 85%;
+    background-color: #d4af37; /* Gold */
+    color: #0b1a33; /* Navy text */
+    padding: 16px;
+    margin: 12px auto;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    display: block;
+    text-decoration: none;
+}
+
+.option:active {
+    opacity: 0.7;
+}
+
+/* Make .option a real clickable button */
+.option {
+    width: 85%;
+    padding: 16px;
+    margin: 12px auto;
+    border-radius: 10px;
+    background: #13294b;     /* dark navy */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #d4af37; /* gold border */
+    display: block;
+    cursor: pointer;          /* THIS is the key */
+    text-align: center;
+}
+
+
+.header-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: #d4af37;
+}
+
+.sub-text {
+    font-size: 14px;
+    color: #c5c5c5;
+    margin-top: 4px;
+}
+
+/* Dark Background (Guest App) */
+body.guest-page {
+    background-color: #0b1a33; /* Navy */
+    color: white;
+}
+
+/* ---------------------------
+   DASHBOARD STYLING
+----------------------------*/
+body.dashboard-page {
+    background: #f3f3f3;
+    color: #111;
+    padding: 0;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    max-width: 1100px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+}
+
+/* Dashboard Title */
+.dashboard-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #0b1a33;
+    margin-bottom: 20px;
+}
+
+/* Filter Buttons */
+.filter-bar {
+    margin-bottom: 15px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: #0b1a33;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #d4af37;
+    color: #0b1a33;
+}
+
+/* Requests Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #d4af37;
+    color: #0b1a33;
+    padding: 12px;
+    font-size: 16px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Status Badges */
+.badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.badge-pending {
+    background: #f1c40f; /* Yellow */
+    color: black;
+}
+
+.badge-progress {
+    background: #3498db; /* Blue */
+}
+
+.badge-completed {
+    background: #2ecc71; /* Green */
+}
+
+/* Complete Button */
+.complete-btn {
+    padding: 8px 12px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ---------------------------
+   DASHBOARD LOGIN SCREEN
+----------------------------*/
+.login-box {
+    max-width: 350px;
+    margin: 120px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    margin-bottom: 15px;
+    color: #0b1a33;
+}
+
+.password-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #d4af37;
+    color: #0b1a33;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Remove underline from menu items */
+a {
+    text-decoration: none !important;
+}
+
+.option {
+    text-decoration: none !important;
+    display: block;
+    color: white;
+}

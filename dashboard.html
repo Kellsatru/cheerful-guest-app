@@ -1,0 +1,35 @@
+<body class="dashboard-page">
+
+<!-- DASHBOARD ONLY -->
+<div id="dashboard">
+
+    <div class="dashboard-container">
+        <div class="dashboard-title">Cheerful Hotel – Request Manager</div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterRequests('all')" id="btn-all">All</button>
+            <button class="filter-btn" onclick="filterRequests('unaizah')" id="btn-unaizah">Unaizah</button>
+            <button class="filter-btn" onclick="filterRequests('alrass')" id="btn-alrass">Al-Rass</button>
+        </div>
+
+        <table id="requests-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Branch</th>
+                    <th>Room</th>
+                    <th>Request</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="requests-body"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script defer type="module" src="firebase.js"></script>
+<script defer type="module" src="dashboard.js"></script>
+
+</body>

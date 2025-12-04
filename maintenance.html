@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maintenance – Cheerful Hotel</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer type="module" src="firebase.js"></script>
+<script defer type="module" src="script.js"></script>
+
+</head>
+<body class="guest-page">
+
+<!-- Logo -->
+<img src="logo.png" class="logo" alt="Cheerful Hotel Logo">
+
+<!-- Title -->
+<div class="header-text">Maintenance</div>
+<div class="sub-text" id="branch-room">Loading...</div>
+
+<!-- Options -->
+<div class="option" onclick="sendRequest('AC Not Cooling')">AC Not Cooling</div>
+<div class="option" onclick="sendRequest('Light Not Working')">Light Not Working</div>
+<div class="option" onclick="sendRequest('Water Leakage / No Water')">Water Issue</div>
+<div class="option" onclick="sendRequest('TV Not Working')">TV Not Working</div>
+<div class="option" onclick="sendRequest('Electrical Problem')">Electrical Problem</div>
+<div class="option" onclick="sendRequest('Other Maintenance Request')">Other Issue</div>
+
+</body>
+</html>

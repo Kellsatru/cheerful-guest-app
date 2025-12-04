@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amenities – Cheerful Hotel</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer type="module" src="firebase.js"></script>
+<script defer type="module" src="script.js"></script>
+
+</head>
+<body class="guest-page">
+
+<!-- Logo -->
+<img src="logo.png" class="logo" alt="Cheerful Hotel Logo">
+
+<!-- Title -->
+<div class="header-text">Amenities</div>
+<div class="sub-text" id="branch-room">Loading...</div>
+
+<!-- Options -->
+<div class="option" onclick="sendRequest('Slippers')">Slippers</div>
+<div class="option" onclick="sendRequest('Dental Kit')">Dental Kit</div>
+<div class="option" onclick="sendRequest('Shaving Kit')">Shaving Kit</div>
+<div class="option" onclick="sendRequest('Shampoo')">Shampoo</div>
+<div class="option" onclick="sendRequest('Shower Gel')">Shower Gel</div>
+<div class="option" onclick="sendRequest('Iron and Iron Board')">Iron & Iron Board</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housekeeping – Cheerful Hotel</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer type="module" src="firebase.js"></script>
+<script defer type="module" src="script.js"></script>
+
+</head>
+<body class="guest-page">
+
+<!-- Logo -->
+<img src="logo.png" class="logo" alt="Cheerful Hotel Logo">
+
+<!-- Title -->
+<div class="header-text">Housekeeping</div>
+<div class="sub-text" id="branch-room">Loading...</div>
+
+<!-- Options -->
+<div class="option" onclick="sendRequest('Make Up Room')">Make Up Room</div>
+<div class="option" onclick="sendRequest('Change Towels')">Change Towels</div>
+<div class="option" onclick="sendRequest('Change Bed Linen')">Change Bed Linen</div>
+<div class="option" onclick="sendRequest('Extra Pillow')">Extra Pillow</div>
+<div class="option" onclick="sendRequest('Extra Blanket')">Extra Blanket</div>
+<div class="option" onclick="sendRequest('Extra Water Bottles')">Extra Water Bottles</div>
+
+</body>
+</html>

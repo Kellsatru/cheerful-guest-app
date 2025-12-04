@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Service – Cheerful Hotel</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer type="module" src="firebase.js"></script>
+<script defer type="module" src="script.js"></script>
+
+</head>
+<body class="guest-page">
+
+<!-- Logo -->
+<img src="logo.png" class="logo" alt="Cheerful Hotel Logo">
+
+<!-- Title -->
+<div class="header-text">Room Service</div>
+<div class="sub-text" id="branch-room">Loading...</div>
+
+<!-- Description -->
+<p style="color:white; width:85%; margin: 0 auto; font-size:16px;">
+For food or beverage orders, please tap the button below and our team will assist you immediately.
+</p>
+
+<!-- Button -->
+<div class="option" onclick="sendRequest('Room Service Order Request')">
+Request Room Service
+</div>
+
+</body>
+</html>
