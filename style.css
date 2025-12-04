@@ -9,23 +9,33 @@ body {
     text-align: center;
 
     /* BACKGROUND IMAGE */
-    background-image: url('bg.jpg');     /* Replace with your image file */
+    background-image: url('bg.jpg');   /* change name if needed */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+
+    /* IMPORTANT FIX FOR iPHONE: remove fixed background */
+    background-attachment: scroll;  
 
     position: relative;
 }
 
-/* DARK OVERLAY so text stays readable */
+/* DARK OVERLAY for readability */
 body::before {
     content: "";
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(1px);
     z-index: -1;
+}
+
+/* If you want fixed background on desktop but NOT on mobile */
+@media (min-width: 768px) {
+    body {
+        background-attachment: fixed;
+    }
 }
 
 
@@ -105,7 +115,7 @@ a {
 
 
 /* -----------------------------------------------------------
-   SERVICE REQUEST BUTTONS (HOUSEKEEPING ETC.)
+   SERVICE REQUEST BUTTONS (Housekeeping, Laundry, etc.)
 ----------------------------------------------------------- */
 
 .service-title {
