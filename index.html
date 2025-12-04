@@ -3,157 +3,59 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cheerful Hotel – Guest App</title>
+    <title>Cheerful Hotel – Guest Services</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Scripts -->
+    <!-- Scripts MUST be modules -->
     <script defer type="module" src="firebase.js"></script>
     <script defer type="module" src="script.js"></script>
 </head>
 
-<body>
+<body class="guest-page">
 
-    <!-- ===========================
-         HERO HEADER SECTION
-    ============================ -->
-    <div class="hero-card">
+    <!-- Logo -->
+    <img src="logo.png" class="logo" alt="Cheerful Hotel Logo" />
 
-        <div class="hero-content">
+    <!-- Title -->
+    <div class="header-text">CHEERFUL HOTEL</div>
 
-            <!-- Greeting -->
-            <div class="hero-greeting" id="hero-greeting">Good Evening, Guest</div>
+    <!-- Greeting + Weather -->
+    <div class="welcome-text">Loading...</div>
+    <div class="weather-text" id="weather">Loading weather...</div>
 
-            <!-- Room & Branch -->
-            <div class="hero-room" id="hero-room">UNAIZAH • Room 101</div>
+    <!-- Branch + Room -->
+    <div class="sub-text" id="branch-room">Loading...</div>
 
-        </div>
+    <!-- SERVICE BUTTONS (links get fixed by script.js dynamically) -->
+    <a href="housekeeping.html" id="hk-link">
+        <div class="option"><i class="fa-solid fa-broom"></i> Housekeeping</div>
+    </a>
 
-        <!-- Weather Badge -->
-        <div class="weather-badge" id="weatherBadge">
-            <i class="fa-solid fa-cloud-sun"></i>
-            <span id="weatherText">--°C</span>
-        </div>
-    </div>
+    <a href="maintenance.html" id="mt-link">
+        <div class="option"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance</div>
+    </a>
 
+    <a href="laundry.html" id="ln-link">
+        <div class="option"><i class="fa-solid fa-shirt"></i> Laundry</div>
+    </a>
 
+    <a href="amenities.html" id="am-link">
+        <div class="option"><i class="fa-solid fa-gift"></i> Amenities</div>
+    </a>
 
-    <!-- ===========================
-         MAIN CONTROLS (5 buttons)
-    ============================ -->
-    <div class="controls-grid">
+    <a href="roomservice.html" id="rs-link">
+        <div class="option"><i class="fa-solid fa-bell-concierge"></i> Room Service</div>
+    </a>
 
-        <div class="control-card">
-            <i class="fa-solid fa-do-not-enter"></i>
-            <span>Do Not Disturb</span>
-        </div>
-
-        <div class="control-card" onclick="window.location='housekeeping.html'">
-            <i class="fa-solid fa-broom"></i>
-            <span>Housekeeping</span>
-        </div>
-
-        <div class="control-card" onclick="window.location='contact.html'">
-            <i class="fa-solid fa-phone"></i>
-            <span>Reception</span>
-        </div>
-
-        <div class="control-card">
-            <i class="fa-solid fa-wifi"></i>
-            <span>Wi-Fi</span>
-        </div>
-
-        <div class="control-card">
-            <i class="fa-solid fa-star"></i>
-            <span>Rate Us</span>
-        </div>
-
-    </div>
-
-
-
-    <!-- ===========================
-         EXCLUSIVE OFFERS
-    ============================ -->
-    <h2 class="section-title">Exclusive Offers</h2>
-
-    <div class="offers-scroll">
-
-        <div class="offer-card">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900" />
-            <div class="offer-text">Breakfast for Two • SAR 49</div>
-        </div>
-
-        <div class="offer-card">
-            <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6a?w=900" />
-            <div class="offer-text">Spa Discount • Save 20%</div>
-        </div>
-
-        <div class="offer-card">
-            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900" />
-            <div class="offer-text">Late Checkout Upgrade</div>
-        </div>
-
-    </div>
-
-
-
-    <!-- ===========================
-         HOTEL SERVICES GRID
-    ============================ -->
-    <h2 class="section-title">Hotel Services</h2>
-
-    <div class="services-grid">
-
-        <a href="housekeeping.html" class="service-card">
-            <i class="fa-solid fa-broom"></i>
-            <span>Housekeeping</span>
-        </a>
-
-        <a href="maintenance.html" class="service-card">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <span>Maintenance</span>
-        </a>
-
-        <a href="laundry.html" class="service-card">
-            <i class="fa-solid fa-shirt"></i>
-            <span>Laundry</span>
-        </a>
-
-        <a href="amenities.html" class="service-card">
-            <i class="fa-solid fa-gift"></i>
-            <span>Amenities</span>
-        </a>
-
-        <a href="roomservice.html" class="service-card">
-            <i class="fa-solid fa-bell-concierge"></i>
-            <span>Room Service</span>
-        </a>
-
-        <a href="contact.html" class="service-card">
-            <i class="fa-solid fa-phone"></i>
-            <span>Reception</span>
-        </a>
-
-    </div>
-
-
-    <!-- ===========================
-         TODAY'S HOURS SECTION
-    ============================ -->
-    <h2 class="section-title">Today’s Hours</h2>
-
-    <div class="hours-box">
-        <div>Restaurant: <strong>6 AM – 11 PM</strong></div>
-        <div>Gym: <strong>Open 24 Hours</strong></div>
-        <div>Pool: <strong>8 AM – 9 PM</strong></div>
-    </div>
-
+    <a href="contact.html" id="ct-link">
+        <div class="option"><i class="fa-solid fa-phone"></i> Contact Reception</div>
+    </a>
 
 </body>
 </html>
