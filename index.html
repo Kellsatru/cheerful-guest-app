@@ -5,30 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cheerful Hotel – Guest Services</title>
 
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- MUST be modules -->
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Scripts MUST be modules -->
     <script defer type="module" src="firebase.js"></script>
     <script defer type="module" src="script.js"></script>
 </head>
 
 <body class="guest-page">
 
+    <!-- Logo -->
     <img src="logo.png" class="logo" alt="Cheerful Hotel Logo" />
 
+    <!-- Title -->
     <div class="header-text">CHEERFUL HOTEL</div>
+
+    <!-- Greeting + Weather -->
     <div class="welcome-text">Loading...</div>
-<div class="weather-text" id="weather">Loading weather...</div>
+    <div class="weather-text" id="weather">Loading weather...</div>
+
+    <!-- Branch + Room -->
     <div class="sub-text" id="branch-room">Loading...</div>
 
-    <!-- CLEAN LINKS (script.js will add room & branch automatically) -->
-    <a href="housekeeping.html" id="hk-link"><div class="option">Housekeeping</div></a>
-    <a href="maintenance.html" id="mt-link"><div class="option">Maintenance</div></a>
-    <a href="laundry.html" id="ln-link"><div class="option">Laundry</div></a>
-    <a href="amenities.html" id="am-link"><div class="option">Amenities</div></a>
-    <a href="roomservice.html" id="rs-link"><div class="option">Room Service</div></a>
-    <a href="contact.html" id="ct-link"><div class="option">Contact Reception</div></a>
+    <!-- SERVICE BUTTONS (links get fixed by script.js dynamically) -->
+    <a href="housekeeping.html" id="hk-link">
+        <div class="option"><i class="fa-solid fa-broom"></i> Housekeeping</div>
+    </a>
+
+    <a href="maintenance.html" id="mt-link">
+        <div class="option"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance</div>
+    </a>
+
+    <a href="laundry.html" id="ln-link">
+        <div class="option"><i class="fa-solid fa-shirt"></i> Laundry</div>
+    </a>
+
+    <a href="amenities.html" id="am-link">
+        <div class="option"><i class="fa-solid fa-gift"></i> Amenities</div>
+    </a>
+
+    <a href="roomservice.html" id="rs-link">
+        <div class="option"><i class="fa-solid fa-bell-concierge"></i> Room Service</div>
+    </a>
+
+    <a href="contact.html" id="ct-link">
+        <div class="option"><i class="fa-solid fa-phone"></i> Contact Reception</div>
+    </a>
 
 </body>
 </html>
-
