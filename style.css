@@ -32,10 +32,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-
-    background: rgba(0, 0, 0, 0.55);
-    
-    /* allow clicking through */
+    background: rgba(0, 0, 0, 0.28); /* LIGHTER OVERLAY */
     pointer-events: none;
 }
 .logo {
@@ -177,4 +174,5 @@ a {
     border: none;
     border-radius: 8px;
 }
+
 
