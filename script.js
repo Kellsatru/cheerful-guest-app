@@ -1,17 +1,19 @@
-// ----------------------------
-// GET BRANCH + ROOM FROM URL
-// ----------------------------
+// ---------------------------------------------------------
+// GET BRANCH & ROOM FROM URL
+// ---------------------------------------------------------
 const url = new URLSearchParams(window.location.search);
 const branch = url.get("branch") || "unknown";
 const room = url.get("room") || "unknown";
 
 
-// ----------------------------
-// ON PAGE LOAD – Hero UI Setup
-// ----------------------------
+// ---------------------------------------------------------
+// ON PAGE LOAD → WELCOME TEXT + WEATHER + LINK FIXING
+// ---------------------------------------------------------
 window.onload = () => {
 
+    // -----------------------------------------
     // TIME-BASED GREETING
+    // -----------------------------------------
     let hour = new Date().getHours();
     let greeting = "Welcome";
 
@@ -19,60 +21,83 @@ window.onload = () => {
     else if (hour < 18) greeting = "Good Afternoon";
     else greeting = "Good Evening";
 
-    document.getElementById("hero-greeting").textContent = `${greeting}, Guest`;
+    const welcomeText = document.querySelector(".welcome-text");
+    if (welcomeText) welcomeText.textContent = `${greeting}, Guest`;
 
-    // ROOM DISPLAY
-    document.getElementById("hero-room").textContent =
-        `${branch.toUpperCase()} • Room ${room}`;
 
-    // WEATHER API (Unaizah)
+    // -----------------------------------------
+    // SHOW BRANCH + ROOM
+    // -----------------------------------------
+    let br = document.getElementById("branch-room");
+    if (br) br.textContent = branch.toUpperCase() + " • Room " + room;
+
+
+    // -----------------------------------------
+    // FIX SERVICE PAGE LINKS WITH CORRECT ROOM + BRANCH
+    // -----------------------------------------
+    const pages = ["hk", "mt", "ln", "am", "rs", "ct"];
+    for (let p of pages) {
+        let link = document.getElementById(p + "-link");
+        if (link) {
+            link.href = `${link.href}?branch=${branch}&room=${room}`;
+        }
+    }
+
+
+    // -----------------------------------------
+    // UNAIZAH WEATHER API
+    // -----------------------------------------
     fetch("https://api.open-meteo.com/v1/forecast?latitude=26.084&longitude=43.974&current_weather=true")
-        .then(r => r.json())
+        .then(response => response.json())
         .then(data => {
             const temp = data.current_weather.temperature;
-            const code = data.current_weather.weathercode;
+            const weatherCode = data.current_weather.weathercode;
 
-            let icon = "☀️";
-            if (code >= 45 && code <= 48) icon = "🌫️";
-            if (code >= 51 && code <= 67) icon = "🌧️";
-            if (code >= 71 && code <= 77) icon = "❄️";
-            if (code >= 80 && code <= 82) icon = "🌦️";
-            if (code >= 95) icon = "⛈️";
+            // Choose icon
+            let icon = "☀️"; // clear
+            if (weatherCode >= 45 && weatherCode <= 48) icon = "🌫️"; // fog
+            if (weatherCode >= 51 && weatherCode <= 67) icon = "🌧️"; // drizzle/rain
+            if (weatherCode >= 71 && weatherCode <= 77) icon = "❄️"; // snow
+            if (weatherCode >= 80 && weatherCode <= 82) icon = "🌦️"; // showers
+            if (weatherCode >= 95) icon = "⛈️"; // thunderstorm
 
-            document.getElementById("weatherText").textContent =
-                `${icon} ${temp}°C`;
+            document.getElementById("weather").textContent =
+                `${icon} ${temp}°C • Unaizah`;
         })
         .catch(() => {
-            document.getElementById("weatherText").textContent = "--°C";
+            document.getElementById("weather").textContent = "Weather unavailable";
         });
+
 };
 
 
-// ----------------------------
+
+// ---------------------------------------------------------
 // FIREBASE IMPORTS
-// ----------------------------
+// ---------------------------------------------------------
 import { db } from "./firebase.js";
 import { ref, push } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 
-// ----------------------------
-// SEND REQUEST FUNCTION
-// ----------------------------
+// ---------------------------------------------------------
+// SEND REQUEST TO FIREBASE + WHATSAPP
+// ---------------------------------------------------------
 export function sendRequest(requestText) {
 
     const timestamp = new Date().toLocaleString();
 
     const data = {
-        branch,
-        room,
+        branch: branch,
+        room: room,
         request: requestText,
         status: "pending",
         time: timestamp
     };
 
+    // Save to Firebase
     push(ref(db, "requests"), data);
 
-    // WhatsApp Notification
+    // WhatsApp
     let msg =
         `Cheerful Hotel Request:\n` +
         `Branch: ${branch}\n` +
