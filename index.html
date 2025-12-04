@@ -3,59 +3,130 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cheerful Hotel – Guest Services</title>
+    <title>Cheerful Hotel – Guest App</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Scripts MUST be modules -->
+    <!-- Scripts -->
     <script defer type="module" src="firebase.js"></script>
     <script defer type="module" src="script.js"></script>
 </head>
 
-<body class="guest-page">
+<body>
 
-    <!-- Logo -->
-    <img src="logo.png" class="logo" alt="Cheerful Hotel Logo" />
+    <!-- ===========================
+         TOP SECTION
+    ============================ -->
+    <div class="container">
+        <img src="cheerful.png" class="logo" />
 
-    <!-- Title -->
-    <div class="header-text">CHEERFUL HOTEL</div>
+        <h2 id="greeting">Loading...</h2>
+        <p id="branch-room">Loading...</p>
 
-    <!-- Greeting + Weather -->
-    <div class="welcome-text">Loading...</div>
-    <div class="weather-text" id="weather">Loading weather...</div>
+        <div id="weather-box">
+            <i class="fa-solid fa-cloud"></i>
+            <span id="weatherText">Loading...</span>
+        </div>
 
-    <!-- Branch + Room -->
-    <div class="sub-text" id="branch-room">Loading...</div>
+        <!-- Buttons -->
+        <div class="button-grid">
+            <a href="housekeeping.html" class="btn"><i class="fa-solid fa-broom"></i> Housekeeping</a>
+            <a href="maintenance.html" class="btn"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance</a>
+            <a href="laundry.html" class="btn"><i class="fa-solid fa-shirt"></i> Laundry</a>
+            <a href="amenities.html" class="btn"><i class="fa-solid fa-gift"></i> Amenities</a>
+            <a href="roomservice.html" class="btn"><i class="fa-solid fa-bell-concierge"></i> Room Service</a>
+            <a href="contact.html" class="btn"><i class="fa-solid fa-phone"></i> Reception</a>
+        </div>
+    </div>
 
-    <!-- SERVICE BUTTONS (links get fixed by script.js dynamically) -->
-    <a href="housekeeping.html" id="hk-link">
-        <div class="option"><i class="fa-solid fa-broom"></i> Housekeeping</div>
-    </a>
 
-    <a href="maintenance.html" id="mt-link">
-        <div class="option"><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance</div>
-    </a>
 
-    <a href="laundry.html" id="ln-link">
-        <div class="option"><i class="fa-solid fa-shirt"></i> Laundry</div>
-    </a>
 
-    <a href="amenities.html" id="am-link">
-        <div class="option"><i class="fa-solid fa-gift"></i> Amenities</div>
-    </a>
+    <!-- ===========================
+         TODAY'S HOURS (Glass Cards)
+    ============================ -->
+    <h2 class="section-title">Today's Hours</h2>
 
-    <a href="roomservice.html" id="rs-link">
-        <div class="option"><i class="fa-solid fa-bell-concierge"></i> Room Service</div>
-    </a>
+    <div class="hours-grid">
 
-    <a href="contact.html" id="ct-link">
-        <div class="option"><i class="fa-solid fa-phone"></i> Contact Reception</div>
-    </a>
+        <div class="glass-card">
+            <i class="fa-solid fa-utensils"></i>
+            <div class="card-title">Breakfast</div>
+            <div class="card-time">6:00 AM – 11:00 AM</div>
+        </div>
+
+        <div class="glass-card">
+            <i class="fa-solid fa-person-swimming"></i>
+            <div class="card-title">Pool</div>
+            <div class="card-time">7:00 AM – 10:00 PM</div>
+        </div>
+
+        <div class="glass-card">
+            <i class="fa-solid fa-dumbbell"></i>
+            <div class="card-title">Fitness Center</div>
+            <div class="card-time">24 Hours</div>
+        </div>
+
+        <div class="glass-card">
+            <i class="fa-solid fa-mug-hot"></i>
+            <div class="card-title">Executive Lounge</div>
+            <div class="card-time">24 Hours</div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- ===========================
+         HOTEL SERVICES (Glass Cards)
+    ============================ -->
+    <h2 class="section-title">Hotel Services</h2>
+
+    <div class="services-grid">
+
+        <a href="housekeeping.html" class="glass-card service">
+            <i class="fa-solid fa-broom"></i>
+            <div class="card-title">Housekeeping</div>
+            <div class="card-time">Request Cleaning</div>
+        </a>
+
+        <a href="maintenance.html" class="glass-card service">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <div class="card-title">Maintenance</div>
+            <div class="card-time">Report Issue</div>
+        </a>
+
+        <a href="laundry.html" class="glass-card service">
+            <i class="fa-solid fa-shirt"></i>
+            <div class="card-title">Laundry</div>
+            <div class="card-time">Clothing Care</div>
+        </a>
+
+        <a href="amenities.html" class="glass-card service">
+            <i class="fa-solid fa-gift"></i>
+            <div class="card-title">Amenities</div>
+            <div class="card-time">Extra Items</div>
+        </a>
+
+        <a href="roomservice.html" class="glass-card service">
+            <i class="fa-solid fa-bell-concierge"></i>
+            <div class="card-title">Room Service</div>
+            <div class="card-time">Order Food</div>
+        </a>
+
+        <a href="contact.html" class="glass-card service">
+            <i class="fa-solid fa-phone"></i>
+            <div class="card-title">Reception</div>
+            <div class="card-time">Call Front Desk</div>
+        </a>
+
+    </div>
 
 </body>
 </html>
